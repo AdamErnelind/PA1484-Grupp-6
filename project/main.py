@@ -41,21 +41,43 @@ class Application:
         self.tile1 = self.tileview.add_tile(0, 0, lv.DIR.RIGHT)
         self.tile2 = self.tileview.add_tile(1, 0, lv.DIR.LEFT)
 
-        self.tile1_label = lv.label(self.tile1)
-        self.tile1_label.set_text("Hello Students")
-        self.tile1_label.set_style_text_font(lv.font_montserrat_28, 0)
-        self.tile1_label.center()
-        self.apply_tile_colors(self.tile1, self.tile1_label, False)
+        self.tile1.set_style_bg_opa(lv.OPA.COVER, 0)
+        self.tile1.set_style_bg_color(lv.color_hex(0xFFFFFF), 0)
 
         self.tile2_label = lv.label(self.tile2)
-        self.tile2_label.set_text("Welcome to the workshop")
+        self.tile2_label.set_text("This is a test")
         self.tile2_label.set_style_text_font(lv.font_montserrat_28, 0)
         self.tile2_label.center()
         self.apply_tile_colors(self.tile2, self.tile2_label, False)
         self.tile2.add_flag(lv.obj.FLAG.CLICKABLE)
-        self.tile2.add_event_cb(
-            self.on_tile2_clicked, lv.EVENT.CLICKED, None
-        )
+        self.tile2.add_event_cb(self.on_tile2_clicked, lv.EVENT.CLICKED, None)
+        # 1. Projektnamn
+        self.title_label = lv.label(self.tile1)
+        self.title_label.set_text("Public Transport Info")
+        self.title_label.set_style_text_font(lv.font_montserrat_28, 0)
+        self.title_label.set_style_text_color(lv.color_hex(0x000000), 0)
+        # Centrera i toppen och flytta ner 40 pixlar
+        self.title_label.align(lv.ALIGN.TOP_MID, 0, 40)
+        # 2. Programversion
+        self.version_label = lv.label(self.tile1)
+        self.version_label.set_text("Version: 1.0.0")
+        self.version_label.set_style_text_color(lv.color_hex(0x000000), 0)
+        # Flytta ner 80 pixlar från toppen så den hamnar under titeln
+        self.version_label.align(lv.ALIGN.TOP_MID, 0, 80)
+
+        # 3. Gruppnummer
+        self.group_label = lv.label(self.tile1)
+        self.group_label.set_text("Grupp 6") 
+        self.group_label.set_style_text_color(lv.color_hex(0x000000), 0)
+        # Utgå från mitten men flytta upp 30 pixlar (negativt Y-värde)
+        self.group_label.align(lv.ALIGN.CENTER, 0, -30)
+
+        # 4. Gruppmedlemmar
+        self.members_label = lv.label(self.tile1)
+        self.members_label.set_text("Medlemmar:\nAdam\nOlle\nOliver\nPetter\nFritz")
+        self.members_label.set_style_text_color(lv.color_hex(0x000000), 0)
+        # Utgå från mitten och flytta ner 25 pixlar
+        self.members_label.align(lv.ALIGN.CENTER, 0, 25)
 
     @staticmethod
     def connect_wifi():
