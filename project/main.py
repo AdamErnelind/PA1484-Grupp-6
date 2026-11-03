@@ -79,6 +79,32 @@ class Application:
         # Utgå från mitten och flytta ner 25 pixlar
         self.members_label.align(lv.ALIGN.CENTER, 0, 25)
 
+    def create_settings_tile(self):
+        'Function: Creates the settings screen (US3.1, US3.2B)'
+        self.settings_title = lv.label(self.tile3)
+        self.settings_title.set_text("Settings")
+        self.settings_title.set_style_text_font(lv.font_montserrat_28, 0)
+        self.settings_title.set_style_text_color(lv.color_hex(BLACK), 0)
+        self.settings_title.align(lv.ALIGN.TOP_MID, 0, 40)
+
+        self.stop_hint = lv.label(self.tile3)
+        self.stop_hint.set_text("Select stop:")
+        self.stop_hint.set_style_text_color(lv.color_hex(BLACK), 0)
+        self.stop_hint.align(lv.ALIGN.TOP_MID, 0, 100)
+
+        self.stop_dropdown = lv.dropdown(self.tile3)
+        self.stop_dropdown.set_options("No stops loaded")
+        self.stop_dropdown.set_width(400)
+        self.stop_dropdown.align(lv.ALIGN.TOP_MID, 0, 130)
+        self.stop_dropdown.add_event_cb(
+            self.on_stop_selected, lv.EVENT.VALUE_CHANGED, None
+        )
+
+        self.settings_status = lv.label(self.tile3)
+        self.settings_status.set_text("")
+        self.settings_status.set_style_text_color(lv.color_hex(BLACK), 0)
+        self.settings_status.align(lv.ALIGN.TOP_MID, 0, 200)
+
     @staticmethod
     def connect_wifi():
         'Function: Connects to WiFi'
