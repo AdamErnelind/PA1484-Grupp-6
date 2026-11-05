@@ -12,19 +12,16 @@ from secrets import WIFI_SSID, WIFI_PASSWORD
 BLACK = lv.color_hex(0x000000)
 WHITE = lv.color_hex(0xFFFFFF)
 
-
-
 # Exempeldata: hållplatsnamn och deras avgångar
 # Varje avgång är (tid, linje, destination, status)
 STOPS = [
     ("Karlskrona Resecentrum", [
         ("14:30", "1", "Lyckeby", "On time"),
         ("14:55", "2", "Rödeby", "Scheduled"),
-=======
         ("14:42", "4", "Nattraby", "Delayed +3 min"),
         ("14:55", "2", "Rodeby", "Scheduled"),
         ("15:10", "1", "Lyckeby", "Cancelled"),
->>>>>>> 18547ef40ecdc6b44c832bbe3eef2b773dbc3d1f
+
     ]),
     ("Karlskrona Pottholmen", [
         ("14:35", "3", "Jamjo", "On time"),
@@ -34,9 +31,8 @@ STOPS = [
     ("Karlskrona Campus", [
         ("14:38", "2", "Resecentrum", "Delayed 5 min"),
         ("15:00", "4", "Nättraby", "On time"),
-=======
         ("15:00", "4", "NAttraby", "On time"),
->>>>>>> 18547ef40ecdc6b44c832bbe3eef2b773dbc3d1f
+
     ]),
 ]
 
