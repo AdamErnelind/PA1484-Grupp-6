@@ -17,9 +17,11 @@ WHITE = lv.color_hex(0xFFFFFF)
 STOPS = [
     ("Karlskrona Resecentrum", [
         ("14:30", "1", "Lyckeby", "On time"),
-        ("14:42", "4", "Nättraby", "Delayed +3 min"),
+        ("14:42", "4", "Nättraby", "Delayed 3 min"),
+<<<<<<< Updated upstream
         ("14:55", "2", "Rödeby", "Scheduled"),
-        ("15:10", "1", "Lyckeby", "Cancelled"),
+=======
+>>>>>>> Stashed changes
     ]),
     ("Karlskrona Pottholmen", [
         ("14:35", "3", "Jämjö", "On time"),
@@ -27,12 +29,19 @@ STOPS = [
         ("15:05", "3", "Jämjö", "Scheduled"),
     ]),
     ("Karlskrona Campus", [
+<<<<<<< Updated upstream
         ("14:38", "2", "Resecentrum", "Delayed +5 min"),
+=======
+        ("14:38", "2", "Resecentrum", "Delayed 5 min"),
+>>>>>>> Stashed changes
         ("15:00", "4", "Nättraby", "On time"),
     ]),
 ]
 
+<<<<<<< Updated upstream
 TRANSPORT_TYPES = ["All", "Bus", "Train", "Ferry"]
+=======
+>>>>>>> Stashed changes
 
 class Application:
     def __init__(self):
@@ -72,7 +81,7 @@ class Application:
         self.title_label.align(lv.ALIGN.TOP_MID, 0, 40)
         # 2. Programversion
         self.version_label = lv.label(self.tile1)
-        self.version_label.set_text("Version: 1.0.0")
+        self.version_label.set_text("Version: 2.0.0")
         self.version_label.set_style_text_color(BLACK, 0)
         # Flytta ner 80 pixlar från toppen så den hamnar under titeln
         self.version_label.align(lv.ALIGN.TOP_MID, 0, 80)
@@ -91,6 +100,7 @@ class Application:
         # Utgå från mitten och flytta ner 25 pixlar
         self.members_label.align(lv.ALIGN.CENTER, 0, 25)
 
+<<<<<<< Updated upstream
         #Välj transportmedel
         self.transport_hint = lv.label(self.tile3)
         self.transport_hint.set_text("Select transport type:")
@@ -102,6 +112,8 @@ class Application:
         self.transport_dropdown.set_width(400)
         self.transport_dropdown.align(lv.ALIGN.TOP_MID, 0, 250)
 
+=======
+>>>>>>> Stashed changes
     def create_departure_screen(self):
         'Function: Creates the departure screen (US1.2B)'
         # Hållplatsens namn högst upp
