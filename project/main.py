@@ -17,18 +17,18 @@ WHITE = lv.color_hex(0xFFFFFF)
 STOPS = [
     ("Karlskrona Resecentrum", [
         ("14:30", "1", "Lyckeby", "On time"),
-        ("14:42", "4", "Nättraby", "Delayed +3 min"),
-        ("14:55", "2", "Rödeby", "Scheduled"),
+        ("14:42", "4", "Nattraby", "Delayed +3 min"),
+        ("14:55", "2", "Rodeby", "Scheduled"),
         ("15:10", "1", "Lyckeby", "Cancelled"),
     ]),
     ("Karlskrona Pottholmen", [
-        ("14:35", "3", "Jämjö", "On time"),
+        ("14:35", "3", "Jamjo", "On time"),
         ("14:50", "1", "Resecentrum", "On time"),
-        ("15:05", "3", "Jämjö", "Scheduled"),
+        ("15:05", "3", "Jamjo", "Scheduled"),
     ]),
     ("Karlskrona Campus", [
         ("14:38", "2", "Resecentrum", "Delayed +5 min"),
-        ("15:00", "4", "Nättraby", "On time"),
+        ("15:00", "4", "NAttraby", "On time"),
     ]),
 ]
 
