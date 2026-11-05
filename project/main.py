@@ -17,31 +17,28 @@ WHITE = lv.color_hex(0xFFFFFF)
 STOPS = [
     ("Karlskrona Resecentrum", [
         ("14:30", "1", "Lyckeby", "On time"),
-        ("14:42", "4", "Nättraby", "Delayed 3 min"),
-<<<<<<< Updated upstream
         ("14:55", "2", "Rödeby", "Scheduled"),
 =======
->>>>>>> Stashed changes
+        ("14:42", "4", "Nattraby", "Delayed +3 min"),
+        ("14:55", "2", "Rodeby", "Scheduled"),
+        ("15:10", "1", "Lyckeby", "Cancelled"),
+>>>>>>> 18547ef40ecdc6b44c832bbe3eef2b773dbc3d1f
     ]),
     ("Karlskrona Pottholmen", [
-        ("14:35", "3", "Jämjö", "On time"),
+        ("14:35", "3", "Jamjo", "On time"),
         ("14:50", "1", "Resecentrum", "On time"),
-        ("15:05", "3", "Jämjö", "Scheduled"),
+        ("15:05", "3", "Jamjo", "Scheduled"),
     ]),
     ("Karlskrona Campus", [
-<<<<<<< Updated upstream
-        ("14:38", "2", "Resecentrum", "Delayed +5 min"),
-=======
         ("14:38", "2", "Resecentrum", "Delayed 5 min"),
->>>>>>> Stashed changes
         ("15:00", "4", "Nättraby", "On time"),
+=======
+        ("15:00", "4", "NAttraby", "On time"),
+>>>>>>> 18547ef40ecdc6b44c832bbe3eef2b773dbc3d1f
     ]),
 ]
 
-<<<<<<< Updated upstream
 TRANSPORT_TYPES = ["All", "Bus", "Train", "Ferry"]
-=======
->>>>>>> Stashed changes
 
 class Application:
     def __init__(self):
@@ -100,7 +97,6 @@ class Application:
         # Utgå från mitten och flytta ner 25 pixlar
         self.members_label.align(lv.ALIGN.CENTER, 0, 25)
 
-<<<<<<< Updated upstream
         #Välj transportmedel
         self.transport_hint = lv.label(self.tile3)
         self.transport_hint.set_text("Select transport type:")
@@ -112,8 +108,6 @@ class Application:
         self.transport_dropdown.set_width(400)
         self.transport_dropdown.align(lv.ALIGN.TOP_MID, 0, 250)
 
-=======
->>>>>>> Stashed changes
     def create_departure_screen(self):
         'Function: Creates the departure screen (US1.2B)'
         # Hållplatsens namn högst upp
