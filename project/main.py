@@ -19,9 +19,12 @@ WHITE = lv.color_hex(0xFFFFFF)
 STOPS = [
     ("Karlskrona Resecentrum", [
         ("14:30", "1", "Lyckeby", "On time"),
+        ("14:55", "2", "Rödeby", "Scheduled"),
+=======
         ("14:42", "4", "Nattraby", "Delayed +3 min"),
         ("14:55", "2", "Rodeby", "Scheduled"),
         ("15:10", "1", "Lyckeby", "Cancelled"),
+>>>>>>> 18547ef40ecdc6b44c832bbe3eef2b773dbc3d1f
     ]),
     ("Karlskrona Pottholmen", [
         ("14:35", "3", "Jamjo", "On time"),
@@ -29,8 +32,11 @@ STOPS = [
         ("15:05", "3", "Jamjo", "Scheduled"),
     ]),
     ("Karlskrona Campus", [
-        ("14:38", "2", "Resecentrum", "Delayed +5 min"),
+        ("14:38", "2", "Resecentrum", "Delayed 5 min"),
+        ("15:00", "4", "Nättraby", "On time"),
+=======
         ("15:00", "4", "NAttraby", "On time"),
+>>>>>>> 18547ef40ecdc6b44c832bbe3eef2b773dbc3d1f
     ]),
 ]
 
@@ -74,7 +80,7 @@ class Application:
         self.title_label.align(lv.ALIGN.TOP_MID, 0, 40)
         # 2. Programversion
         self.version_label = lv.label(self.tile1)
-        self.version_label.set_text("Version: 1.0.0")
+        self.version_label.set_text("Version: 2.0.0")
         self.version_label.set_style_text_color(BLACK, 0)
         # Flytta ner 80 pixlar från toppen så den hamnar under titeln
         self.version_label.align(lv.ALIGN.TOP_MID, 0, 80)
