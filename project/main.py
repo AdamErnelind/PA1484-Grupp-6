@@ -32,6 +32,7 @@ STOPS = [
     ]),
 ]
 
+TRANSPORT_TYPES = ["All", "Bus", "Train", "Ferry"]
 
 class Application:
     def __init__(self):
@@ -89,6 +90,17 @@ class Application:
         self.members_label.set_style_text_color(BLACK, 0)
         # Utgå från mitten och flytta ner 25 pixlar
         self.members_label.align(lv.ALIGN.CENTER, 0, 25)
+
+        #Välj transportmedel
+        self.transport_hint = lv.label(self.tile3)
+        self.transport_hint.set_text("Select transport type:")
+        self.transport_hint.set_style_text_color(BLACK, 0)
+        self.transport_hint.align(lv.ALIGN.TOP_MID, 0, 220)
+
+        self.transport_dropdown = lv.dropdown(self.tile3)
+        self.transport_dropdown.set_options("\n".join(TRANSPORT_TYPES))
+        self.transport_dropdown.set_width(400)
+        self.transport_dropdown.align(lv.ALIGN.TOP_MID, 0, 250)
 
     def create_departure_screen(self):
         'Function: Creates the departure screen (US1.2B)'
