@@ -12,6 +12,8 @@ from secrets import WIFI_SSID, WIFI_PASSWORD
 BLACK = lv.color_hex(0x000000)
 WHITE = lv.color_hex(0xFFFFFF)
 
+
+
 # Exempeldata: hållplatsnamn och deras avgångar
 # Varje avgång är (tid, linje, destination, status)
 STOPS = [
