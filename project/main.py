@@ -1,6 +1,6 @@
 import sys
 import time
-
+import requests
 import lvgl as lv
 import network
 
@@ -165,15 +165,11 @@ class Application:
         log("Wi-Fi connected" if station.isconnected()
             else "Wi-Fi could not connect (timeout)")
 
-
 try:
     app = Application()
 except Exception as error:
     log("FATAL: %r" % (error,))
     sys.print_exception(error)
-
-
-import requests
 
 r = requests.get("https://realtime-api.trafiklab.se/v1/stops/list?key=88c347806f764951ba7df2c95a79735b")
 r.status_code == 200
