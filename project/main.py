@@ -46,6 +46,7 @@ class Application:
         self.connect_wifi()
         log("student application ready")
 
+
     def create_ui(self):
         'Function: Creates UI'
         self.tileview = lv.tileview(lv.screen_active())
