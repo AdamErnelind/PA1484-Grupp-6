@@ -19,11 +19,12 @@ BLACK = lv.color_hex(0x000000)
 WHITE = lv.color_hex(0xFFFFFF)
 
 
-TRANSPORT_TYPES = ["All", "Bus", "Train", "Ferry"]
-STOPS = ["Karlskrona Resecentrum", "Karlskrona Pottholmen", "Karlskrona Campus"]
+Transport_types = ["All", "Bus", "Train", "Ferry"]
+Stops = ["Karlskrona Resecentrum", "Karlskrona Pottholmen", "Karlskrona Campus"]
 API = "https://realtime-api.trafiklab.se/v1" 
 
 def hämta_avgångar(stop_namn):
+    pass
 
 class Application:
     def __init__(self):
@@ -82,8 +83,18 @@ class Application:
         self.members_label.set_style_text_color(BLACK, 0)
         # Utgå från mitten och flytta ner 25 pixlar
         self.members_label.align(lv.ALIGN.CENTER, 0, 25)
+        self.tile3 = self.tileview.add_tile(0, 1, lv.DIR.TOP)
 
+        #Välj transportmedel
+        self.transport_hint = lv.label(self.tile3)
+        self.transport_hint.set_text("Select transport type:")
+        self.transport_hint.set_style_text_color(BLACK, 0)
+        self.transport_hint.align(lv.ALIGN.TOP_MID, 0, 220)
 
+        self.transport_dropdown = lv.dropdown(self.tile3)
+        self.transport_dropdown.set_options("\n".join(TRANSPORT_TYPES))
+        self.transport_dropdown.set_width(400)
+        self.transport_dropdown.align(lv.ALIGN.TOP_MID, 0, 250)
 
     def create_departure_screen(self):
         'Function: Creates the departure screen (US1.2B)'
@@ -128,16 +139,6 @@ class Application:
         self.stop_dropdown.add_event_cb(
             self.on_stop_selected, lv.EVENT.VALUE_CHANGED, None
         )
-              #Välj transportmedel
-        self.transport_hint = lv.label(self.tile3)
-        self.transport_hint.set_text("Select transport type:")
-        self.transport_hint.set_style_text_color(BLACK, 0)
-        self.transport_hint.align(lv.ALIGN.TOP_MID, 0, 220)
-        
-        self.transport_dropdown = lv.dropdown(self.tile3)
-        self.transport_dropdown.set_options("\n".join(TRANSPORT_TYPES))
-        self.transport_dropdown.set_width(400)
-        self.transport_dropdown.align(lv.ALIGN.TOP_MID, 0, 250)
 
     def on_stop_selected(self, _event):
         'Function: Körs när man väljer en annan hållplats'
