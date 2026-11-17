@@ -9,13 +9,12 @@ from debug_log import log
 
 from secrets import WIFI_SSID, WIFI_PASSWORD
 
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 BLACK = 0x000000
-=======
+
 BLACK = lv.color_hex(0x000000)
 WHITE = lv.color_hex(0xFFFFFF)
-=======
+
 BLACK = lv.color_hex(0x000000)
 WHITE = lv.color_hex(0xFFFFFF)
 
@@ -44,7 +43,6 @@ STOPS = [
 ]
 
 TRANSPORT_TYPES = ["All", "Bus", "Train", "Ferry"]
->>>>>>> 79991425d08eb51e2edfec6aa46e5cc4fb05f1c5
 
 # Exempeldata: hållplatsnamn och deras avgångar
 # Varje avgång är (tid, linje, destination, status)
@@ -72,7 +70,6 @@ STOPS = [
 
 TRANSPORT_TYPES = ["All", "Bus", "Train", "Ferry"]
 
->>>>>>> 79991425d08eb51e2edfec6aa46e5cc4fb05f1c5
 class Application:
     def __init__(self):
         self.display, self.touch, self.handler = start_board()
@@ -226,18 +223,10 @@ try:
 except Exception as error:
     log("FATAL: %r" % (error,))
     sys.print_exception(error)
-<<<<<<< HEAD
-<<<<<<< HEAD
-    raise 
+
 
 import requests
 
 r = requests.get("https://realtime-api.trafiklab.se/v1/stops/list?key=88c347806f764951ba7df2c95a79735b")
 r.status_code == 200
 r.json()["stations"]
-=======
-    raise
->>>>>>> 79991425d08eb51e2edfec6aa46e5cc4fb05f1c5
-=======
-    raise
->>>>>>> 79991425d08eb51e2edfec6aa46e5cc4fb05f1c5
