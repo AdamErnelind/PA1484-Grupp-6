@@ -3,12 +3,12 @@ import time
 import requests
 import lvgl as lv
 import network
+import requests
 
-from board_lvgl import start_board
+from board_lvgl import start_board 
 from debug_log import log
 
-from secrets import WIFI_SSID, WIFI_PASSWORD
-
+from secrets import WIFI_SSID, WIFI_PASSWORD, TRAFIKLAB_KEY
 
 BLACK = 0x000000
 
@@ -17,6 +17,13 @@ WHITE = lv.color_hex(0xFFFFFF)
 
 BLACK = lv.color_hex(0x000000)
 WHITE = lv.color_hex(0xFFFFFF)
+
+
+Transport_types = ["All", "Bus", "Train", "Ferry"]
+Stops = ["Karlskrona Resecentrum", "Karlskrona Pottholmen", "Karlskrona Campus"]
+API = "https://realtime-api.trafiklab.se/v1" 
+
+def hämta_avgångar(stop_namn):
 
 class Application:
     def __init__(self):
