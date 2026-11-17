@@ -19,8 +19,8 @@ BLACK = lv.color_hex(0x000000)
 WHITE = lv.color_hex(0xFFFFFF)
 
 
-Transport_types = ["All", "Bus", "Train", "Ferry"]
-Stops = ["Karlskrona Resecentrum", "Karlskrona Pottholmen", "Karlskrona Campus"]
+TRANSPORT_TYPES = ["All", "Bus", "Train", "Ferry"]
+STOPS = ["Karlskrona Resecentrum", "Karlskrona Pottholmen", "Karlskrona Campus"]
 API = "https://realtime-api.trafiklab.se/v1" 
 
 def hämta_avgångar(stop_namn):
