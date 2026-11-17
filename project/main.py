@@ -15,9 +15,6 @@ BLACK = 0x000000
 BLACK = lv.color_hex(0x000000)
 WHITE = lv.color_hex(0xFFFFFF)
 
-BLACK = lv.color_hex(0x000000)
-WHITE = lv.color_hex(0xFFFFFF)
-
 
 TRANSPORT_TYPES = ["All", "Bus", "Train", "Ferry"]
 STOPS = ["Karlskrona Resecentrum", "Karlskrona Pottholmen", "Karlskrona Campus"]
