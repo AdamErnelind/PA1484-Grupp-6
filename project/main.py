@@ -9,7 +9,7 @@ from debug_log import log
 
 from secrets import WIFI_SSID, WIFI_PASSWORD
 
-
+BLACK = 0x000000
 class Application:
     def __init__(self):
         self.display, self.touch, self.handler = start_board()
@@ -78,6 +78,7 @@ class Application:
         self.members_label.set_style_text_color(lv.color_hex(0x000000), 0)
         # Utgå från mitten och flytta ner 25 pixlar
         self.members_label.align(lv.ALIGN.CENTER, 0, 25)
+        self.tile3 = self.tileview.add_tile(0, 1, lv.DIR.TOP)
 
     def create_settings_tile(self):
         'Function: Creates the settings screen (US3.1, US3.2B)'
@@ -127,3 +128,8 @@ except Exception as error:
     sys.print_exception(error)
     raise 
 
+import requests
+
+r = requests.get("https://realtime-api.trafiklab.se/v1/stops/list?key=88c347806f764951ba7df2c95a79735b")
+r.status_code == 200
+r.json()["stations"]
