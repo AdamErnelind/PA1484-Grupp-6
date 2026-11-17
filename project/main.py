@@ -10,10 +10,41 @@ from debug_log import log
 from secrets import WIFI_SSID, WIFI_PASSWORD
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 BLACK = 0x000000
 =======
 BLACK = lv.color_hex(0x000000)
 WHITE = lv.color_hex(0xFFFFFF)
+=======
+BLACK = lv.color_hex(0x000000)
+WHITE = lv.color_hex(0xFFFFFF)
+
+# Exempeldata: hållplatsnamn och deras avgångar
+# Varje avgång är (tid, linje, destination, status)
+STOPS = [
+    ("Karlskrona Resecentrum", [
+        ("14:30", "1", "Lyckeby", "On time"),
+        ("14:55", "2", "Rödeby", "Scheduled"),
+        ("14:42", "4", "Nattraby", "Delayed +3 min"),
+        ("14:55", "2", "Rodeby", "Scheduled"),
+        ("15:10", "1", "Lyckeby", "Cancelled"),
+
+    ]),
+    ("Karlskrona Pottholmen", [
+        ("14:35", "3", "Jamjo", "On time"),
+        ("14:50", "1", "Resecentrum", "On time"),
+        ("15:05", "3", "Jamjo", "Scheduled"),
+    ]),
+    ("Karlskrona Campus", [
+        ("14:38", "2", "Resecentrum", "Delayed 5 min"),
+        ("15:00", "4", "Nättraby", "On time"),
+        ("15:00", "4", "NAttraby", "On time"),
+
+    ]),
+]
+
+TRANSPORT_TYPES = ["All", "Bus", "Train", "Ferry"]
+>>>>>>> 79991425d08eb51e2edfec6aa46e5cc4fb05f1c5
 
 # Exempeldata: hållplatsnamn och deras avgångar
 # Varje avgång är (tid, linje, destination, status)
@@ -195,6 +226,7 @@ except Exception as error:
     log("FATAL: %r" % (error,))
     sys.print_exception(error)
 <<<<<<< HEAD
+<<<<<<< HEAD
     raise 
 
 import requests
@@ -202,6 +234,9 @@ import requests
 r = requests.get("https://realtime-api.trafiklab.se/v1/stops/list?key=88c347806f764951ba7df2c95a79735b")
 r.status_code == 200
 r.json()["stations"]
+=======
+    raise
+>>>>>>> 79991425d08eb51e2edfec6aa46e5cc4fb05f1c5
 =======
     raise
 >>>>>>> 79991425d08eb51e2edfec6aa46e5cc4fb05f1c5
