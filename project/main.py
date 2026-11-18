@@ -40,7 +40,7 @@ class Application:
             return {"stop_index": 0, "transport_index": 0}
 
     def save_settings(self, _event):
-        'Sparar nuvarande val som standard (US3.4)'
+        'Sparar nuvarande val som standard'
         self.settings["stop_index"] = self.stop_dropdown.get_selected()
         self.settings["transport_index"] = self.transport_dropdown.get_selected()
         try:
@@ -51,14 +51,14 @@ class Application:
             log("Failed to save settings: %r" % (e,))
 
     def reset_settings(self, _event):
-        '''Återställer till sparade inställningar från filen (US3.5)'''
+        'Återställer till sparade inställningar från filen'
         self.settings = self.load_settings()
         self.stop_dropdown.set_selected(self.settings.get("stop_index", 0))
         self.transport_dropdown.set_selected(self.settings.get("transport_index", 0))
         self.show_departures()
 
     def create_ui(self):
-        'Function: Creates UI'
+        'Funktion, Skapar UI'
         self.tileview = lv.tileview(lv.screen_active())
         self.tileview.set_size(600, 450)
         self.tileview.set_scrollbar_mode(lv.SCROLLBAR_MODE.OFF)
@@ -77,7 +77,7 @@ class Application:
         self.create_settings_screen()
 
     def create_start_screen(self):
-        'Function: Creates the start screen (US1.1)'
+        'Funktion, skapa start screen'
         self.title_label = lv.label(self.tile1)
         self.title_label.set_text("Public Transport Info")
         self.title_label.set_style_text_font(lv.font_montserrat_28, 0)
@@ -102,7 +102,7 @@ class Application:
         self.tile3 = self.tileview.add_tile(0, 1, lv.DIR.TOP)
 
     def create_departure_screen(self):
-        'Function: Creates the departure screen (US1.2B)'
+        'Funktion, skapar departure screen'
         self.stop_label = lv.label(self.tile2)
         self.stop_label.set_text("Departures")
         self.stop_label.set_style_text_font(lv.font_montserrat_28, 0)
@@ -121,7 +121,7 @@ class Application:
         self.table.set_style_text_color(BLACK, lv.PART.ITEMS)
 
     def create_settings_screen(self):
-        'Function: Creates the settings screen (US3.1, US3.2B, US3.4, US3.5)'
+        'Funktion, skapar settings screen'
         self.settings_title = lv.label(self.tile3)
         self.settings_title.set_text("Settings")
         self.settings_title.set_style_text_font(lv.font_montserrat_28, 0)
@@ -168,11 +168,11 @@ class Application:
         self.reset_label.set_text("Reset Default")
 
     def on_stop_selected(self, _event):
-        'Function: Körs när man väljer en annan hållplats'
+        'Funktion, Körs när man väljer en annan hållplats'
         self.show_departures()
 
     def show_departures(self):
-        'Function: Visar avgångarna för vald hållplats i tabellen'
+        'Funktion, Visar avgångarna för vald hållplats i tabellen'
         index = self.stop_dropdown.get_selected()
         stop_namn = STOPS[index]
         self.stop_label.set_text(stop_namn)
