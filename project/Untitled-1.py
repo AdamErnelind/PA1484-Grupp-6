@@ -6,7 +6,7 @@ def Intialer(namn):
     for ch in delnamn:
         resultatet+=ch[0]
     return resultatet
-print(Intialer("Per-BOKE Hansson"))
+print(Intialer("Per-Boke Hansson"))
 
 
 
